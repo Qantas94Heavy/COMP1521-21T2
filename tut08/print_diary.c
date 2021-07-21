@@ -14,6 +14,8 @@ int main(void) {
 
     // PATH_MAX is the biggest possible path on Linux.
     char path[PATH_MAX + 1];
+    // snprintf copies the formatted text on the right to the
+    // string on the left.
     snprintf(path, PATH_MAX + 1, "%s/.diary", home);
     printf("%s\n", path);
 
