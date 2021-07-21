@@ -12,11 +12,11 @@ int main(void) {
         return 1;
     }
 
-    // PATH_MAX is the biggest possible path on Linux.
-    char path[PATH_MAX + 1];
+    // PATH_MAX is the biggest possible path on Linux (including '\0').
+    char path[PATH_MAX];
     // snprintf copies the formatted text on the right to the
     // string on the left.
-    snprintf(path, PATH_MAX + 1, "%s/.diary", home);
+    snprintf(path, PATH_MAX, "%s/.diary", home);
     printf("%s\n", path);
 
     // Open a file for reading.
